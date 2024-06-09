@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <title>To do list</title>
+    <style>
+        body {
+            background-color: #FAFAFA ;
+            padding-top:50px;       
+         }
+         .container {
+            max-width: 550px ;
+            margin:auto;
+            box-shadow:2px 2px 13px -4px rgba(0,0,0,0.21) ;
+         }
+          a,p {
+            text-decoration: none;
+            color: #4b514b;
+         }
+         .header{
+            display: flex;
+            justify-content: space-between;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px 5px 0 0;
+            background:linear-gradient(90deg,#EEA390 0% ,#EB796F 43%,#EB796F 100% );
+         }
+         .header a {
+            color:#FAFAFA;
+            text-decoration: none;
+         }
+         .header a:hover {
+            text-decoration: underline;
+         }
+ 
+         .task-wrapper{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px;
+            background-color: #fff;
+            border-top: 1px solid rgb(226, 226,226);
+         }
+         .task-title {
+            display: flex;
+         }
+         .task-title a {
+            color :#4b514b;
+            margin-left: 15px;
+         }
+         .complete-icon {
+            height: 20px;
+            width: 20px;
+            background-color: rgb(105,192,105);
+            border-radius: 50%;
+         }
+         .incomplete-icon{
+            height: 20px;
+            width: 20px;
+            background-color: rgb(218,218,218);
+            border-radius: 50%;
+         }
+    
+         .delete-link {
+            text-decoration: none;
+            font-weight: 900;
+            color: #cf4949;
+            font-size: 22px;
+        }
+         .search{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+
+         }
+         .search form {
+            display: flex;
+         }
+         #add-link {
+            color: #EB796F;
+            text-decoration: none;
+            font-size: 42px;
+            text-shadow: 1px 1px #81413b;
+         }
+         input[type=text],
+         input[type=password],
+         textarea {
+             border: 1px solid #EB796F;
+             border-radius: 5px;
+             padding: 10px;
+             width: 90%;
+         }
+         
+         label{
+            padding-top:10px !important ;
+            display: block;
+         }
+         .button {
+            border: 1px solid #EB796F;
+            background-color: #FAFAFA;
+            color: #EB796F;
+            padding: 10px;
+            font-size: 14px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            margin-right: 10px;
+         }
+         .card-body{
+            padding: 20px;
+         }
+         .header #back {
+            font-size: 1.4em;
+            font-weight: 500;
+            text-decoration: none;
+         }
+    </style>
+</head>
+<body>
+    <div class="container">
+        {% block content %}
+        
+        {% endblock content %}
+    </div>
+    <script>
+      // Function to mark a task as complete
+      function completeTask() {
+          // Get the element representing the incomplete task
+          let incompleteIcon = document.querySelector('.incomplete-icon');
+  
+          // Change the background color to indicate completion
+          incompleteIcon.style.backgroundColor = 'rgb(105, 192, 105)';
+      }
+  
+      // Attach an event listener to a button or element that triggers completion
+      let completeButton = document.getElementById('complete-button');
+      completeButton.addEventListener('click', completeTask);
+  </script>
+  
+</body>
+</html>
